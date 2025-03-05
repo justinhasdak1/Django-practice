@@ -1,83 +1,74 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Skills Animation
     const skills = document.querySelectorAll(".skill");
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
+                entry.target.style.opacity = "1";
                 entry.target.style.transform = "translateY(0)";
-                let progress = entry.target.querySelector(".progress");
-                let width = entry.target.getAttribute("data-skill");
-                progress.style.width = width + "%";
+                const progress = entry.target.querySelector(".progress");
+                const width = entry.target.getAttribute("data-skill");
+                progress.style.width = `${width}%`;
+                skillObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.3 });
 
-    skills.forEach(skill => observer.observe(skill));
-});
+    skills.forEach((skill) => skillObserver.observe(skill));
 
-
-document.addEventListener("DOMContentLoaded", function() {
+    // Project Cards Animation
     const projectCards = document.querySelectorAll(".project-card");
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
+    const projectObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+                projectObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.3 });
-    
-    projectCards.forEach(card => {
-        observer.observe(card);
-    });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
+    projectCards.forEach((card) => projectObserver.observe(card));
+
+    // Services Animation
     const services = document.querySelectorAll(".service-card");
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
+    const serviceObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-                observer.unobserve(entry.target);
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+                serviceObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.3 });
 
-    services.forEach(service => observer.observe(service));
-});
+    services.forEach((service) => serviceObserver.observe(service));
 
-
-document.addEventListener("DOMContentLoaded", function () {
+    // Contact Section Animation
     const contactSection = document.querySelector(".contact-section");
-    const title = document.querySelector(".section-title");
-    const subtitle = document.querySelector(".section-subtitle");
-    const formContainer = document.querySelector(".contact-form-container");
-    
-    function revealOnScroll() {
-        let sectionTop = contactSection.getBoundingClientRect().top;
-        let windowHeight = window.innerHeight;
-        if (sectionTop < windowHeight - 100) {
-            title.style.opacity = "1";
-            title.style.transform = "translateY(0)";
-            subtitle.style.opacity = "1";
-            subtitle.style.transform = "translateY(0)";
-            formContainer.style.opacity = "1";
-            formContainer.style.transform = "scale(1)";
-        }
-    }
+    const contactTitle = document.querySelector(".contact-section .section-title");
+    const contactSubtitle = document.querySelector(".contact-section .section-subtitle");
+    const contactForm = document.querySelector(".contact-form-container");
 
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
-});
+    const contactObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                contactTitle.style.opacity = "1";
+                contactTitle.style.transform = "translateY(0)";
+                contactSubtitle.style.opacity = "1";
+                contactSubtitle.style.transform = "translateY(0)";
+                contactForm.style.opacity = "1";
+                contactForm.style.transform = "scale(1)";
+                contactObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.3 });
 
+    contactObserver.observe(contactSection);
 
-document.addEventListener("DOMContentLoaded", function() {
-    const footer = document.querySelector(".footer");
-    
-    footer.addEventListener("mouseover", () => {
-        footer.style.background = "linear-gradient(135deg, #333, #1e1e1e)";
-    });
-
-    footer.addEventListener("mouseleave", () => {
-        footer.style.background = "linear-gradient(135deg, #1e1e1e, #333)";
+    // Form Submission
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Thank you for your message!");
     });
 });
