@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <!--Left side Content-->
+            <div class="col-lg-4 col-md-12 col-sm-12 my-5">
+                <!--Forms Start-->
+                        <h1 class="alert alert-danger text-center">Todays Bazar</h1>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{form.as_p}}
+                            <input type="submit" value="Submit" class="btn btn-primary"></input>
+                        </form>
+                <!--Forms End-->
+            </div>
+
+            <!--Right side Content-->
+            <div class="col-lg-8 col-md-12 col-sm-12 my-5">
+                <!--Display Data-->
+                    <h1 class="alert alert-warning text-center">Bazar Records List</h1>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">NO</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                        {% for i in data %}
+                        <tr>
+                            <th>{{i.id}}</th>
+                            <td>{{i.name}}</td>
+                            <td>{{i.price}}</td>
+                            <td>{{i.date}}</td>
+                            <td>
+                                <a href="{% url 'update' i.id %}" class="btn">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <form action="{% url 'delete' i.id %}" method="POST" class="d-inline">
+                                    {% csrf_token %}
+                                    <button type="submit">
+                                        <i class="fa-solid fa-trash m-2"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                <!--Display Data End-->
+            </div>
+        </div>
+    </div>
+{% endblock content %}
