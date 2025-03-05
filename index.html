@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="/portfolio/static/css/style.css">
+    <link rel="stylesheet" href="/portfolio/static/css/bootstrap.min.css">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <div class="main_container container">
+        <!-- Header -->
+        <header class="header py-3 border-bottom text-center">
+            <h1>Hi! <br> Matheus Justin Hasda</h1>
+            <h3>Web Designer & Developer</h3>
+            <div class="profile_icon">
+                <ul class="d-flex justify-content-center gap-3">
+                    <li><a href="#"><i class="fa-brands fa-github fs-3"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin fs-3"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-x-twitter fs-3"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-facebook fs-3"></i></a></li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">JH</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="btn">Hire Me</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- About Me Section -->
+        <section id="about" class="about py-4">
+            <h2 class="text-center border-bottom pb-3">About Me</h2>
+            <div class="row d-flex align-items-center">
+                <div class="col-md-4">
+                    <img src="/portfolio/media/propic.jpg" class="img-fluid rounded" alt="Profile Picture">
+                </div>
+                <div class="col-md-8">
+                    <p>I am Matheus Justin Hasda, a passionate Frontend Designer & Web Developer with expertise in HTML, CSS, JavaScript, Bootstrap, Django, and Python.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <h2 class="text-center">My Skills</h2>
+            <div class="skills-container">
+                <div class="skill"><span>HTML</span><div class="progress-bar"><div class="progress" style="width:90%"></div></div></div>
+                <div class="skill"><span>CSS</span><div class="progress-bar"><div class="progress" style="width:85%"></div></div></div>
+                <div class="skill"><span>JavaScript</span><div class="progress-bar"><div class="progress" style="width:80%"></div></div></div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <h2 class="text-center">Recent Projects</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="project-card text-center">
+                        <h5>Digiservebd</h5>
+                        <img src="/portfolio/media/digiservebd.png" class="img-fluid" alt="Digiservebd">
+                        <p>Digital marketing agency</p>
+                        <a href="#" class="btn btn-primary">Visit</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <h2 class="text-center">My Services</h2>
+            <div class="service">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Web Development</h3>
+                <p>Modern, responsive, and scalable web applications.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2 class="text-center">Contact Me</h2>
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer text-center">
+            <p>&copy; 2025 Justinhasda. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="/portfolio/static/js/script.js"></script>
+    <script src="/portfolio/static/js/bootstrap.min.js"></script>
+</body>
+</html>

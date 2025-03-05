@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+}
+/*--profile_icon--*/
+.profile_icon ul{
+    list-style: none;
+    text-align: center;
+    padding-inline-start: 0px;
+}
+.profile_icon ul li a{
+    text-decoration: none;
+    color: rgb(99, 99, 99);
+    transition: 0.4s ease-in;
+}
+.profile_icon ul li a:hover{
+    color: rgb(253, 1, 1);
+    transition: 0.4s ease-out;
+}
+
+/*--navbar--*/
+.navbar{
+    background-color: black;
+}
+.navbar a{
+    color: white;
+}
+.navbar a:hover{
+    color: rgb(255, 0, 0);
+}
+.navbar button{
+    color: white;
+}
+.navbar button:hover{
+    color: rgb(241, 2, 2);
+}
+.navbar-toggler-icon{
+    color: white!important;
+}
+
+
+.skills-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: #121212;
+    color: white;
+}
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+.skills-container {
+    max-width: 600px;
+    margin: auto;
+}
+.skill {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    text-align: left;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #444;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    transition: width 1s ease-in-out;
+}
+
+
+
+.project-card {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+}
+.project-card.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease-in-out;
+}
+
+
+.services-section {
+    padding: 80px 0;
+    text-align: center;
+    background: #f9f9f9;
+}
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.service-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+.service-card i {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+
+.contact-section {
+    padding: 50px 20px;
+    text-align: center;
+    background: #111;
+    color: white;
+}
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.6s ease-in-out;
+}
+.section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.6s ease-in-out 0.2s;
+}
+.contact-form-container {
+    max-width: 500px;
+    margin: auto;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.6s ease-in-out 0.4s;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+}
+.btn-submit {
+    background: #ff5e57;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+.btn-submit:hover {
+    background: #ff3b30;
+}
+
+.footer {
+    background: linear-gradient(135deg, #1e1e1e, #333);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: moveGlow 5s linear infinite;
+}
+
+@keyframes moveGlow {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(200px, 200px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
